@@ -1,10 +1,16 @@
-import { Todo } from './todo';
+import { Todo } from "./todo";
 
-describe('Todo Initialization Test', () => {
-  let todo = new Todo({
-    title: 'Hello World',
-    complete: true
+describe("Todo", () => {
+  it("should create an instance", () => {
+    expect(new Todo()).toBeTruthy();
   });
-  expect(todo.title).toEqual('Hello World');
-  expect(todo.complete).toBeTrue();
-})
+
+  it("should accept values in the constructor", () => {
+    let todo = new Todo({
+      title: "hello",
+      complete: true
+    });
+    expect(todo.title).toEqual("hello");
+    expect(todo.complete).toEqual(true);
+  });
+});
